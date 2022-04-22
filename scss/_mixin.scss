@@ -1,0 +1,10 @@
+@mixin effect($pr) {
+    filter: brightness($pr);
+    transition: .2s;
+}
+
+@mixin grid-container($direction) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: wrap;
+}

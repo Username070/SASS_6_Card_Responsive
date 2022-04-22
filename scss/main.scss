@@ -1,0 +1,45 @@
+@import "var", "mixin";
+
+body {
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 480px) and (min-width: 0px) {
+    .container {
+        @include grid-container(column);
+    }
+
+    .img {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 481px) {
+    .container {
+        @include grid-container(row);
+    }
+
+    .img {
+        width: 45%;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .container {
+        @include grid-container(row);
+
+        .img {
+            width: calc(85% / 3);
+        }
+    }
+} 
+
+.img {
+    border-radius: $image-radius;
+    margin: 2.5%;
+    @include effect($dim-low);
+
+    &:hover {
+        @include effect($dim-normal);
+    }
+}
